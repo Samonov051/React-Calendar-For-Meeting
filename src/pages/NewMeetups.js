@@ -1,8 +1,8 @@
 import NewMeetupForum from "../components/meetups/NewMeetupForm";
-import { useHistory } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
 function NewMeetupsPage() {
-  const history = useHistory();
+  const navigate = useNavigate ();
   //send request to the server
   function addMeetupHandler(meetupData) {
     //fetch is a vanilla js to send 'get' and 'post'request
@@ -18,7 +18,7 @@ function NewMeetupsPage() {
         },
       }
     ).then(() => {
-      history.replace("/");
+      navigate("/");
     });
   }
   return (

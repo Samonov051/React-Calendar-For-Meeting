@@ -1,5 +1,5 @@
 import MeetupList from "../components/meetups/MeetupList";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 
 function AllMeetupsPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,16 +32,16 @@ function AllMeetupsPage() {
 
   if (isLoading) {
     return (
-      <section>
+      <Fragment>
         <p>Loading...</p>
-      </section>
+      </Fragment>
     );
   }
   return (
-    <section>
+    <Fragment>
       <h1>All Meetups</h1>
       <MeetupList meetups={loadedMeetups} />
-    </section>
+    </Fragment>
   );
 }
 export default AllMeetupsPage;

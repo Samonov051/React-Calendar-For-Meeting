@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes  } from "react-router-dom";
 
 import AllMeetupsPage from "./pages/AllMeetups";
 import NewMeetupPage from "./pages/NewMeetups";
@@ -10,14 +10,10 @@ function App() {
   //only show this when the full url end with '/'
   return (
     <Layout>
-      <Switch>
-        <Route path="/" exact>
-          <AllMeetupsPage />
-        </Route>
-        <Route path="/new-meetup">
-          <NewMeetupPage />
-        </Route>
-      </Switch>
+      <Routes >
+        <Route path="/" exact element={<AllMeetupsPage />}/>
+        <Route path="/new-meetup" element={<NewMeetupPage />}/>
+      </Routes >
     </Layout>
   );
 }
